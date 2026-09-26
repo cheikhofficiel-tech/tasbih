@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TASBIH | Discours religieux</title>
+    <meta
+      name="description"
+      content="Application moderne d’écoute de discours religieux du Sénégal inspirée de l’interface TASBIH."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="launching">
+    <div class="launch-screen" id="launchScreen" aria-live="polite">
+      <div class="launch-backdrop"></div>
+      <div class="launch-content">
+        <div class="launch-brand">
+          <div class="launch-mark">M</div>
+          <div>
+            <p class="launch-subtitle">TASBIH</p>
+            <h2>Discours religieux</h2>
+          </div>
+        </div>
+        <div class="launch-status">
+          <span>Initialisation</span>
+          <strong>Préparation de la bibliothèque spirituelle</strong>
+        </div>
+        <div class="loading-bar" aria-label="Chargement de l’application">
+          <span id="loadingBar"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-wrap">
+          <div class="brand-mark">M</div>
+          <div>
+            <p class="brand-subtitle">TASBIH</p>
+            <h1>Senegal</h1>
+          </div>
+        </div>
+
+        <nav class="nav-menu">
+          <button class="nav-item active" type="button">
+            <span>🏠</span>
+            Accueil
+          </button>
+          <button class="nav-item" type="button">
+            <span>🎧</span>
+            Écoute
+          </button>
+          <button class="nav-item" type="button">
+            <span>📚</span>
+            Enseignants
+          </button>
+          <button class="nav-item" type="button">
+            <span>🕊️</span>
+            Prières
+          </button>
+          <button class="nav-item settings-trigger" data-action="settings" type="button">
+            <span>⚙️</span>
+            Paramètres
+          </button>
+        </nav>
+
+        <div class="mini-card">
+          <p>Live du jour</p>
+          <strong>Le dhikr du soir</strong>
+          <span>19:30 • Dakar</span>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div class="telegram-bar">
+            <div class="telegram-brand">
+              <div class="telegram-icon">M</div>
+              <span>TASBIH</span>
+            </div>
+
+            <div class="telegram-tabs">
+              <button class="tab-pill active">Accueil</button>
+              <button class="tab-pill">Sermons</button>
+              <button class="tab-pill">Live</button>
+              <button class="tab-pill">Favoris</button>
+            </div>
+
+            <div class="telegram-actions">
+              <button class="action-btn">🔔</button>
+              <button class="action-btn">✉️</button>
+              <button class="avatar settings-trigger" type="button" aria-label="Ouvrir les paramètres">SF</button>
+            </div>
+          </div>
+        </header>
+
+        <header class="searchbar-row">
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="searchInput" type="text" placeholder="Rechercher un sermon, un enseignant..." />
+          </div>
+          <button class="pill ghost">S’abonner</button>
+        </header>
+
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">Talib de la lumière</span>
+            <h2>Discours religieux du Sénégal, inspirants et accessibles.</h2>
+            <p>
+              Écoutez des enseignements spirituels, des sermons de sagesse et des
+              moments de réflexion avec des figures emblématiques du pays.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-btn">Écouter maintenant</button>
+              <button class="secondary-btn">Découvrir</button>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <strong>120+</strong>
+                <span>Conférences</span>
+              </div>
+              <div>
+                <strong>4</strong>
+                <span>Enseignants</span>
+              </div>
+              <div>
+                <strong>24h</strong>
+                <span>Lecture continue</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-showcase" aria-label="Sélection en vedette">
+            <div class="showcase-card main-card">
+              <div class="showcase-art" aria-hidden="true"></div>
+              <div class="showcase-info">
+                <div class="showcase-topline">
+                  <span class="live-pill">Live</span>
+                  <span>4.9 ★</span>
+                </div>
+                <h3>Serigne Sam Mbaye</h3>
+                <p>Le Temps n°4</p>
+              </div>
+              <div class="mini-wave">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="floating-card card-one">
+              <span>Dhikr</span>
+              <strong>18 min</strong>
+            </div>
+
+            <div class="floating-card card-two">
+              <span>Focus</span>
+              <strong>Paix intérieure</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-header">
+          <div>
+            <span class="eyebrow muted">Collection</span>
+            <h3>Choisir un enseignant</h3>
+          </div>
+          <div class="filter-row" id="filterRow">
+            <button class="filter active" data-filter="Tous" type="button">Tous</button>
+            <button class="filter" data-filter="Tafsir" type="button">Tafsir</button>
+            <button class="filter" data-filter="Dhikr" type="button">Dhikr</button>
+            <button class="filter" data-filter="Vie spirituelle" type="button">Vie spirituelle</button>
+          </div>
+        </section>
+
+        <div class="settings-modal hidden" id="settingsModal" aria-hidden="true">
+          <div class="settings-backdrop" data-close="settings"></div>
+          <aside class="settings-panel" aria-label="Réglages">
+            <div class="settings-header">
+              <div>
+                <span class="eyebrow muted">Paramètres</span>
+                <h3>Préférences</h3>
+              </div>
+              <button class="close-settings" id="closeSettingsBtn" type="button" aria-label="Fermer">✕</button>
+            </div>
+
+            <div class="settings-section">
+              <h4>Thème</h4>
+              <div class="theme-picker">
+                <button class="theme-option active" data-theme="dark" type="button">Noir premium</button>
+                <button class="theme-option" data-theme="light" type="button">Clair</button>
+                <button class="theme-option" data-theme="gold" type="button">Or profond</button>
+              </div>
+            </div>
+
+            <div class="settings-section">
+              <h4>Notifications</h4>
+              <label class="toggle-row" for="notificationsToggle">
+                <span>Recevoir les rappels et nouveautés</span>
+                <input id="notificationsToggle" type="checkbox" checked />
+              </label>
+            </div>
+
+            <div class="settings-section">
+              <h4>Confidentialité</h4>
+              <label class="toggle-row" for="privacyToggle">
+                <span>Autoriser la protection de données locale</span>
+                <input id="privacyToggle" type="checkbox" checked />
+              </label>
+            </div>
+
+            <div class="settings-section">
+              <h4>Créer un compte gratuit</h4>
+              <div class="signup-options">
+                <button class="signup-btn active" type="button" data-provider="Google">Google</button>
+                <button class="signup-btn" type="button" data-provider="iCloud">iCloud</button>
+                <button class="signup-btn" type="button" data-provider="Téléphone">Téléphone</button>
+              </div>
+
+              <div class="account-form">
+                <div class="form-row split">
+                  <input id="accountName" type="text" placeholder="Nom complet" />
+                  <input id="accountPhone" type="text" placeholder="Téléphone ou e-mail" />
+                </div>
+                <div class="form-row">
+                  <input id="accountEmail" type="email" placeholder="Adresse e-mail" />
+                </div>
+                <button class="primary-btn compact full" id="createAccountBtn" type="button">Créer le compte</button>
+                <p class="form-status" id="accountStatus">Compte prêt à être créé avec Google.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <section class="speaker-grid" id="speakerGrid"></section>
+
+        <section class="details-panel" id="detailsPanel">
+          <div class="detail-profile">
+            <div id="detailProfile"></div>
+            <div class="track-list" id="trackList"></div>
+          </div>
+
+          <div class="mini-player" id="miniPlayer">
+            <div class="player-shell">
+              <div class="player-header">
+                <div class="player-header-left">
+                  <span class="live-dot"></span>
+                  <span>Lecture premium</span>
+                </div>
+                <span class="status-badge" id="offlineBadge">En ligne</span>
+              </div>
+
+              <div class="track-info">
+                <div class="album-art" id="albumArt">M</div>
+                <div class="track-copy">
+                  <p class="track-label">Conférence audio</p>
+                  <h4 id="currentTrack">Le Temps n°4</h4>
+                  <span id="currentSpeaker">Serigne Sam Mbaye</span>
+                </div>
+              </div>
+
+              <div class="progress-block">
+                <div class="time-row">
+                  <span id="currentTime">00:00</span>
+                  <span id="durationTime">00:00</span>
+                </div>
+                <input id="seekBar" type="range" min="0" max="100" value="0" />
+              </div>
+
+              <div class="player-controls">
+                <button class="control-btn" id="prevBtn" type="button" aria-label="Piste précédente">⏮</button>
+                <button class="control-btn play" id="playPauseBtn" type="button" aria-label="Lire ou mettre en pause">▶</button>
+                <button class="control-btn" id="nextBtn" type="button" aria-label="Piste suivante">⏭</button>
+                <button class="primary-btn compact" id="downloadBtn" type="button">Télécharger</button>
+              </div>
+
+              <div class="download-status" id="downloadStatus">Prêt à écouter hors ligne</div>
+              <audio id="audioPlayer" preload="none"></audio>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
